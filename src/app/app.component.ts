@@ -26,6 +26,7 @@ export class AppComponent {
 
 }
 
+
 export class User {
   name: string = "";
   email: string = "";
