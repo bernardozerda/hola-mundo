@@ -2,15 +2,13 @@ import { Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule,
-    RouterOutlet
+    NgbModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -25,7 +23,6 @@ export class AppComponent {
   }
   
 }
-
 
 export class User {
   name: string = "";
