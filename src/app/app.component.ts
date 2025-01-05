@@ -19,11 +19,11 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = "Formulario para datos básicos de un usuario";
   user = new User();
-  
+
   onSubmit() {
     console.log(this.user);
   }
-
+  
 }
 
 
