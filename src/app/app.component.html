@@ -1,20 +1,24 @@
 
 <div class="container mt-5 col-10 div-center">
   <h1>{{title}}</h1>
-  <form (submit)="onSubmit()">
+  <form [formGroup]="pedidosForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Nombre del vendedor:</label>
-      <input type="text" class="form-control" id="name" name="name">
+      <label for="vendedor">Nombre del vendedor:</label>
+      <input type="text" class="form-control" id="vendedor" formControlName="vendedor">
+    </div>
+    <div class="form-group">
+      <label for="email">Correo:</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
     </div>
     <div class="form-group mt-3">
       <label for="cliente">Cliente</label>
-      <select class="form-control" id="cliente" name="cliente">
-        <option value="">Seleccionar cliente</option>
+      <select class="form-control" id="cliente" formControlName="cliente">
+        <option value="" selected>Seleccionar cliente</option>
         @for( cliente of clientes; track cliente.id ){
           <option value="{{cliente.id}}">{{cliente.nombre}} {{cliente.apellido}}</option>
         }
       </select>
     </div>
-    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!pedidosForm.valid">Crear Pedido</button>
   </form>
 </div>

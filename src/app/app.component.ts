@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 //import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -19,8 +20,13 @@ export class AppComponent {
     { id: 3, nombre: 'Laura', apellido: 'Fernandez', edad: 40 }
   ];
 
+  pedidosForm = new FormGroup({ 
+    vendedor: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
+
   onSubmit() {
-    alert('Formulario enviado');
+    alert('Formulario enviado = ' + this.pedidosForm.valid);
   }
 
 }
