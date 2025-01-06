@@ -1,30 +1,19 @@
 import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+//import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    // BrowserModule, En la consola decia que esto no iba
-    FormsModule,
-    NgbModule
-  ],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.css'
 })
-
 export class AppComponent {
-  title = "Formulario para datos básicos de un usuario";
-  user = new User();
+
+  title = 'Formulario del hola mundo';
 
   onSubmit() {
-    console.log(this.user);
+    alert('Formulario enviado');
   }
-  
-}
 
-export class User {
-  name: string = "";
-  email: string = "";
 }
