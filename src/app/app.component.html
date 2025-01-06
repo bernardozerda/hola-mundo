@@ -4,16 +4,22 @@
   <form [formGroup]="pedidosForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="vendedor">Nombre del vendedor:</label>
-      <input type="text" class="form-control" id="vendedor" formControlName="vendedor">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon0">></span>
+        <input type="text" class="form-control" placeholder="Og Mandino" aria-label="vendedor" aria-describedby="basic-addon0" id="vendedor" formControlName="vendedor">
+      </div>
     </div>
     <div class="form-group">
       <label for="email">Correo:</label>
-      <input type="email" class="form-control" id="email" formControlName="email">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">&#64;</span>
+        <input type="email" class="form-control" placeholder="user@server.com" aria-label="Email" aria-describedby="basic-addon1" id="email" formControlName="email">
+      </div>
     </div>
     <div class="form-group mt-3">
       <label for="cliente">Cliente</label>
       <select class="form-control" id="cliente" formControlName="cliente">
-        <option value="" selected>Seleccionar cliente</option>
+        <option value="">Seleccionar cliente</option>
         @for( cliente of clientes; track cliente.id ){
           <option value="{{cliente.id}}">{{cliente.nombre}} {{cliente.apellido}}</option>
         }
